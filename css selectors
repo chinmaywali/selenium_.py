@@ -1,0 +1,21 @@
+rom selenium import webdriver
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach",True)
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.facebook.com/")
+#
+#tag and id
+driver.find_element(By.CSS_SELECTOR,"input#email").send_keys("123")
+
+#tag and class
+driver.find_element(By.CSS_SELECTOR,"input.inputtext").send_keys("5221")
+
+# tag and attribute
+driver.find_element(By.CSS_SELECTOR,"input[data-testid=royal_email]").send_keys("jai")
+
+# tag class and att
+driver.find_element(By.CSS_SELECTOR,"input.inputtext[data-testid=royal_email]").send_keys("123456")
+
