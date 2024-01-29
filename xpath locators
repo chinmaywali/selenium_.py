@@ -1,0 +1,21 @@
+from  selenium import webdriver
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach",True)
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.facebook.com/")
+
+driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input").send_keys("abcd")
+driver.find_element(By.XPATH,'//*[@data-testid="royal_pass"]').send_keys("tyh6")
+driver.find_element(By.XPATH,'//*[@aria-label="Password" or @data-testid="oyal_pass"]').send_keys("t7893")
+driver.find_element(By.XPATH,'//*[@aria-label="Password" and @data-testid="royal_pass"]').send_keys("t7893")
+
+driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[2]/button").click()
+
+driver.find_element(By.XPATH,"//input[contains(@id,'email')]").send_keys("adzjk")
+
+wrong   driver.find_element(By.XPATH,"//*[text()='Create']").click()
+
+
