@@ -1,0 +1,38 @@
+
+from  selenium import webdriver
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach",True)
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://money.rediff.com/gainers/bse/daily/groupa")
+
+
+z = driver.find_element(By.XPATH,"//a[contains(.,'Tata Investment')]/self::a").text
+print(z)
+
+x = driver.find_element(By.XPATH,"//a[contains(.,'Tata Investment')]/parent::td").text
+print(x)
+
+
+w = driver.find_elements(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr/child::td")
+print(len(w))
+
+m = driver.find_element(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr").text
+print(m)
+
+n = driver.find_elements(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr/descendant::*")
+print(len(n))
+
+o = driver.find_elements(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr/following::*")
+print(len(o))
+
+p = driver.find_elements(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr/following-sibling::*")
+print(len(p))
+
+p = driver.find_elements(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr/preceding::*")
+print(len(p))
+q = driver.find_elements(By.XPATH,"//a[contains(.,'Tata Investment')]/ancestor::tr/preceding::tr")
+print(len(q))
+
