@@ -1,0 +1,33 @@
+
+from  selenium import webdriver
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach",True)
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://demo.nopcommerce.com/register?returnUrl=%2F")
+
+# x = driver.find_element(By.XPATH,'//*[@id="small-searchterms"]')
+# print(x.is_displayed())
+# print(x.is_enabled())
+
+#is_selected()
+# before click
+x = driver.find_element(By.XPATH,'//*[@id="gender-male"]')
+print(x.is_selected())
+
+y = driver.find_element(By.XPATH,'//*[@id="gender-female"]')
+print(y.is_selected())
+
+#after click
+
+x.click()
+
+x = driver.find_element(By.XPATH,'//*[@id="gender-male"]')
+print(x.is_selected())
+
+y = driver.find_element(By.XPATH,'//*[@id="gender-female"]')
+print(y.is_selected())
+
+driver.quit()
