@@ -1,0 +1,32 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+
+driver = webdriver.Chrome(options=options)
+driver.get('https://testautomationpractice.blogspot.com/')
+
+s = driver.find_element(By.XPATH,"//select[@id='country']")
+m = Select(s)
+
+
+# m.select_by_visible_text("Japan")
+# m.select_by_index(3)
+# m.select_by_value("china")
+
+a = m.options
+print("Total number of options",len(a))
+#
+# for i in a:
+#     print(i.text)
+
+
+for i in a:
+    if i.text == "India":
+        i.click()
+        break
+
+# driver.quit()
