@@ -1,0 +1,8 @@
+import openpyxl
+file = "S:\Blank.xlsx"
+workbook = openpyxl.load_workbook(file)
+sheet = workbook["Sheet1"]
+
+sheet.cell(1,1).value = 123
+sheet.cell(1,2).value = "ABC"
+workbook.save(file)
