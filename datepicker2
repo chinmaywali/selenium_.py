@@ -9,7 +9,7 @@ options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(options=options)
 driver.get('https://jqueryui.com/datepicker/')
-driver.maximize_window()
+driver.maximize_window() 
 
 driver.switch_to.frame(0)
 # driver.find_element(By.XPATH,"//input[@id='datepicker']").send_keys('02/21/2023')
